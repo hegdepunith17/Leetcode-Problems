@@ -1,0 +1,71 @@
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        vector<int>result;
+        int n=matrix.size();
+        int m=matrix[0].size();
+        int row_s=0;
+        int row_e=n-1;
+        int col_s=0;
+        int col_e=m-1;
+      
+        while(row_s<=row_e && col_s<=col_e)
+        {
+              if (row_s>row_e || col_s>col_e || row_s<0 ||col_s<0)
+            {
+                 return result; 
+            }
+           
+            for(int i=col_s;i<=col_e;i++)
+            {
+                result.push_back(matrix[row_s][i]);
+                
+            }
+            row_s++;
+            
+              if (row_s>row_e || col_s>col_e || row_s<0 ||col_s<0)
+            {
+                 return result; 
+            }
+           
+            
+            for(int i=row_s;i<=row_e;i++)
+            {
+                result.push_back(matrix[i][col_e]);
+                
+            }
+            col_e--;
+            
+              if (row_s>row_e || col_s>col_e || row_s<0 ||col_s<0)
+            {
+                 return result; 
+            }
+           
+            
+            for(int i=col_e;i>=col_s;i--)
+            {
+                result.push_back(matrix[row_e][i]);
+                
+            }
+            row_e--;
+            
+             if (row_s>row_e || col_s>col_e || row_s<0 ||col_s<0)
+            {
+                 return result; 
+            }
+           
+            
+            for(int i=row_e;i>=row_s;i--)
+            {
+                result.push_back(matrix[i][col_s]);
+                
+            }
+            col_s++;
+            
+            
+        }
+        return result; 
+        
+    } 
+   
+};
