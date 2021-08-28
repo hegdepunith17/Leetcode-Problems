@@ -10,6 +10,7 @@ public:
        for(auto it :s){
            nums.push_back(it);
        }
-        return s.size();
+        s.clear();
+        return nums.size();
     }
 };
