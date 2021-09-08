@@ -14,3 +14,22 @@ public:
         return nums.size();
     }
 };
+
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+         int unique_ele=1;
+         if(nums.size()==0) return unique_ele-1;
+         for(int i=1;i<nums.size();i++)
+         {
+            if(nums[i]!=nums[unique_ele-1])
+            {
+                nums[unique_ele]=nums[i]; 
+                unique_ele++;
+            }
+             
+         }
+     return  unique_ele;
+    }
+};
